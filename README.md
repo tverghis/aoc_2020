@@ -16,6 +16,8 @@ cookie's value, so I can do something like this:
 cat .cookie | xargs ./setup 1
 ```
 
+The script was adapted from @burntsushi's [set-up script](https://github.com/BurntSushi/advent-of-code/blob/master/setup-day) from AOC 2018.
+
 ## Running
 
 The solutions are written in Rust. The solutions can be
