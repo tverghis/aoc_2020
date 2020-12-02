@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ $# != 2 ]; then
+	echo "Usage: $(basename "$0") <day-number> <gh-cookie>" >&2
+	exit 1
+fi
+
+if [ ! -d .git ]; then
+	echo "must be run from the repository root" >&2
+	exit 1
+fi
+
+name="$(printf "aoc%02d" "$1")"
+cargo new --bin "$name"
+curl --cookie "session=$2" https://adventofcode.com/2020/day/1/input > "$name"/input.txt
