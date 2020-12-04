@@ -13,8 +13,15 @@ fn main() {
 
     let p1 = part_1(&passports);
     println!("Part 1: {} valid passports", p1);
+
+    let p2 = part_2(&passports);
+    println!("Part 2: {} valid passports", p2);
 }
 
 fn part_1(passports: &[Passport]) -> usize {
     passports.iter().filter(|p| p.has_all_req_fields()).count()
+}
+
+fn part_2(passports: &[Passport]) -> usize {
+    passports.iter().filter(|p| p.validate_fields()).count()
 }
