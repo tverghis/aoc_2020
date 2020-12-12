@@ -7,7 +7,7 @@ use nom::{
     IResult,
 };
 
-type ContainedBag = (String, u32);
+pub type ContainedBag = (String, u32);
 
 pub struct ParsedRule {
     pub parent: String,

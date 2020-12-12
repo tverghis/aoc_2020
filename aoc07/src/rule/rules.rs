@@ -14,9 +14,9 @@ impl Rules {
         }
     }
 
-    pub fn insert_parsed(&mut self, parsed_rule: ParsedRule) {
-        for (child, card) in parsed_rule.children {
-            self.insert(child, (parsed_rule.parent.clone(), card));
+    pub fn insert_parsed(&mut self, parsed_rule: &ParsedRule) {
+        for (child, card) in parsed_rule.children.iter() {
+            self.insert(child.clone(), (parsed_rule.parent.clone(), *card));
         }
     }
 
